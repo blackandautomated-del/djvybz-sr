@@ -407,3 +407,40 @@
     justify-content: space-between;
   }
 }
+
+/* ── MUSIC PAGE ── */
+.music-page {
+  padding-top: 80px;
+  min-height: 100vh;
+  background: var(--bg-dark, #0d1a0d);
+}
+
+.music-hero {
+  padding: 64px 40px 48px;
+  text-align: center;
+}
+
+.music-hero__sub {
+  max-width: 540px;
+  margin: 16px auto 0;
+  color: rgba(249, 246, 240, 0.7);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.music-player-section {
+  padding: 0 40px 80px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.music-player-wrap {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.music-sc-link {
+  margin-top: 24px;
+  text-align: center;
+}

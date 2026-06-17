@@ -39,7 +39,7 @@ function AboutStrip() {
           bringing authentic Jamaican dancehall and reggae culture to stages across the UK and Europe.
         </p>
         <p>
-          From City Splash to Wireless Festival, from Lovers Rock to The Yaad Stage —
+          From Wireless Festival to Lovers Rock, from The Yaad Stage to Freight Brixton —
           he's built a reputation on energy, authenticity, and pure riddim.
         </p>
         <Link to='/about' className='link-arrow'>Full Story →</Link>
@@ -49,9 +49,9 @@ function AboutStrip() {
 }
 
 const UPCOMING_EVENTS = [
-  { day: '19', month: 'July 2025', name: 'City Splash Festival', venue: 'Clapham Common, London', ticketUrl: '#' },
-  { day: '26', month: 'July 2025', name: 'Lovers Rock London', venue: 'Brixton, London', ticketUrl: '#' },
-  { day: '09', month: 'August 2025', name: 'Proud City', venue: 'London', ticketUrl: '#' },
+  { day: '28', month: 'June 2026', name: 'London Reggae & Food Festival', venue: 'Freight Brixton, London SW9 8PB', ticketUrl: '#' },
+  { day: 'TBC', month: '2026', name: 'Lovers Rock London', venue: 'London', ticketUrl: '#' },
+  { day: 'TBC', month: '2026', name: 'Proud City', venue: 'London', ticketUrl: '#' },
 ];
 
 function EventsPreview() {
@@ -94,7 +94,7 @@ function MixFeature() {
   );
 }
 
-const PRESS_CREDITS = ['City Splash', 'Wireless', 'Lovers Rock', 'The Yaad Stage', 'SXSW London'];
+const PRESS_CREDITS = ['Wireless', 'Lovers Rock', 'The Yaad Stage', 'Proud City', 'London Reggae & Food Festival'];
 
 function Press() {
   return (
