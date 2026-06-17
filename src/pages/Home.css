@@ -58,14 +58,11 @@
   margin-bottom: 10px;
 }
 
-.hero__name {
-  font-family: var(--font-display);
-  font-size: clamp(72px, 13vw, 130px);
-  line-height: 0.88;
-  color: var(--gold);
-  letter-spacing: 4px;
-  text-transform: uppercase;
+.hero__logo {
+  max-width: min(480px, 80vw);
+  width: 100%;
   margin-bottom: 16px;
+  display: block;
 }
 
 .hero__badge {
@@ -252,51 +249,16 @@
   margin-top: 8px;
   background: var(--bg-player);
   border: 1px solid rgba(255, 215, 0, 0.12);
-  min-height: 160px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
   overflow: hidden;
 }
 
-.mix-player::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    90deg,
-    rgba(255, 215, 0, 0.025) 0px,
-    rgba(255, 215, 0, 0.025) 2px,
-    transparent 2px,
-    transparent 14px
-  );
+.mix-player iframe {
+  display: block;
 }
 
-.mix-player__inner {
-  position: relative;
-  z-index: 1;
+.mix-sc-link {
+  margin-top: 20px;
   text-align: center;
-}
-
-.mix-player__play {
-  width: 52px;
-  height: 52px;
-  border: 2px solid var(--gold);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 14px;
-  color: var(--gold);
-  font-size: 20px;
-}
-
-.mix-player__label {
-  font-size: 11px;
-  letter-spacing: 2px;
-  color: var(--muted);
-  text-transform: uppercase;
 }
 
 /* ── PRESS ── */

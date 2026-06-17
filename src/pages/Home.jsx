@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import FlagStripe from '../components/FlagStripe';
+import djVybzLogo from '../assets/djvybzsr-logo.png';
 import './Home.css';
 
 function Hero() {
@@ -13,7 +14,7 @@ function Hero() {
       </div>
       <div className='hero__inner'>
         <p className='hero__sound'>Sharprazer Sound</p>
-        <h1 className='hero__name'>DJ<br />VYBZ SR</h1>
+        <img src={djVybzLogo} alt='DJ Vybz SR' className='hero__logo' />
         <span className='hero__badge'>🇯🇲 &nbsp;JAMAICA</span>
         <p className='hero__sub'>London · Reggae · Dancehall · MC</p>
         <FlagStripe width={100} />
@@ -76,6 +77,9 @@ function EventsPreview() {
   );
 }
 
+const SC_LATEST_EMBED =
+  'https://w.soundcloud.com/player/?url=https%3A%2F%2Fapi.soundcloud.com%2Fusers%2F264359230&color=%23FFD700&auto_play=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false';
+
 function MixFeature() {
   return (
     <section className='mix-section'>
@@ -83,10 +87,25 @@ function MixFeature() {
       <h2 className='section-heading'>Listen Up</h2>
       <FlagStripe />
       <div className='mix-player'>
-        <div className='mix-player__inner'>
-          <div className='mix-player__play'>▶</div>
-          <p className='mix-player__label'>SoundCloud / YouTube embed</p>
-        </div>
+        <iframe
+          title='DJ Vybz SR — Latest Mix'
+          width='100%'
+          height='166'
+          scrolling='no'
+          frameBorder='no'
+          allow='autoplay; encrypted-media'
+          src={SC_LATEST_EMBED}
+        />
+      </div>
+      <div className='mix-sc-link'>
+        <a
+          href='https://soundcloud.com/user-459623686'
+          target='_blank'
+          rel='noreferrer'
+          className='link-arrow'
+        >
+          Explore all mixes on SoundCloud →
+        </a>
       </div>
     </section>
   );
