@@ -12,16 +12,9 @@ function Hero() {
         <div style={{ background: 'var(--gold)' }} />
         <div style={{ background: 'var(--red)' }} />
       </div>
-      <img src={djLogo} alt='' className='hero__logo-img' aria-hidden='true' />
       <div className='hero__inner'>
         <p className='hero__sound'>Sharprazer Sound</p>
-        <div className='hero__name'>
-          <span className='hero__name-dj'>DJ</span>
-          <span className='hero__name-vybz-wrap'>
-            <span className='hero__name-vybz'>VYBZ-SR</span>
-          </span>
-          <span className='hero__name-mic' aria-hidden='true'>🎤</span>
-        </div>
+        <img src={djLogo} alt='DJ Vybz SR' className='hero__logo-img' />
         <span className='hero__badge'>🇯🇲 &nbsp;JAMAICA</span>
         <p className='hero__sub'>London · Reggae · Dancehall · MC</p>
         <FlagStripe width={100} />
