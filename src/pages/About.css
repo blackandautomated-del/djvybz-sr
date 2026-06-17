@@ -1,0 +1,177 @@
+.about-page {
+  padding-top: 80px;
+  min-height: 100vh;
+}
+
+.about-page__hero {
+  padding: 64px 40px 48px;
+  max-width: 800px;
+}
+
+/* ── BIO ── */
+.about-bio {
+  background: var(--raised);
+  padding: 64px 40px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.about-bio__photo {
+  aspect-ratio: 3 / 4;
+  background: linear-gradient(160deg, #1a2a1a 0%, #0d1a0d 100%);
+  border: 1px solid rgba(0, 122, 61, 0.2);
+  max-height: 320px;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-bio__photo-flag {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--green), var(--gold), var(--red));
+}
+
+.about-bio__text p {
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.about-bio__text p:last-of-type {
+  margin-bottom: 24px;
+}
+
+@media (min-width: 900px) {
+  .about-bio {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .about-bio__photo {
+    max-height: none;
+  }
+}
+
+/* ── CREDITS ── */
+.about-credits {
+  padding: 64px 40px;
+}
+
+.about-credits__inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-credits__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  margin-top: 8px;
+}
+
+@media (min-width: 600px) {
+  .about-credits__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.credit-card {
+  background: var(--raised);
+  padding: 20px 24px 20px 28px;
+  border-left: 3px solid var(--gold);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  transition: background 0.2s;
+}
+
+.credit-card:hover {
+  background: #131f13;
+}
+
+.credit-card__name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: var(--text);
+}
+
+.credit-card__venue {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+.credit-card__note {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--green);
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.credit-card__year {
+  font-family: var(--font-display);
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+/* ── ROLES / GENRES ── */
+.about-roles {
+  background: var(--raised);
+  padding: 64px 40px;
+}
+
+.about-roles__inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-roles__pills {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+  margin-bottom: 20px;
+}
+
+.role-pill {
+  font-family: var(--font-display);
+  font-size: 16px;
+  letter-spacing: 3px;
+  color: var(--gold);
+  text-transform: uppercase;
+  border: 1px solid var(--gold);
+  padding: 10px 22px;
+}
+
+.about-genres {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.genre-pill {
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--green);
+  text-transform: uppercase;
+  border: 1px solid rgba(0, 122, 61, 0.5);
+  padding: 7px 16px;
+}
+
+/* ── CTA ── */
+.about-cta {
+  padding: 64px 40px;
+  text-align: center;
+}

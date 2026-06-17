@@ -1,7 +1,35 @@
 import { Link } from 'react-router-dom';
 import FlagStripe from '../components/FlagStripe';
 import djLogo from '../assets/djvybzsr-logo.png';
+import useFadeIn from '../hooks/useFadeIn';
 import './Home.css';
+
+const STATS_ITEMS = [
+  '30,000+ FANS',
+  'CITY SPLASH',
+  'WIRELESS FESTIVAL',
+  'SXSW LONDON',
+  'THE YAAD STAGE',
+  'FREIGHT BRIXTON',
+  'LOVERS ROCK',
+  'SHARPRAZER SOUND',
+];
+
+function StatsBar() {
+  const doubled = [...STATS_ITEMS, ...STATS_ITEMS];
+  return (
+    <div className='stats-bar' aria-hidden='true'>
+      <div className='stats-bar__track'>
+        {doubled.map((item, i) => (
+          <span key={i} className='stats-bar__item'>
+            {item}
+            <span className='stats-bar__sep'>·</span>
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 function Hero() {
   return (
@@ -28,9 +56,12 @@ function Hero() {
 }
 
 function AboutStrip() {
+  const ref = useFadeIn();
   return (
-    <section className='about-strip'>
-      <div className='about-strip__img'>PHOTO PLACEHOLDER</div>
+    <section ref={ref} className='about-strip fade-in-section'>
+      <div className='about-strip__img'>
+        <div className='about-strip__img-flag' />
+      </div>
       <div className='about-strip__text'>
         <p className='section-label'>About</p>
         <h2 className='section-heading'>True Jamaican.<br />London Built.</h2>
@@ -50,12 +81,19 @@ function AboutStrip() {
 }
 
 const UPCOMING_EVENTS = [
-  { day: '28', month: 'June 2026', name: 'London Reggae & Food Festival', venue: 'Freight Brixton, London SW9 8PB', ticketUrl: 'https://www.skiddle.com/whats-on/London/Freight-Brixton/London-Reggae--Food-Festival---Rooftop-Edition/42267827/' },
+  {
+    day: '28',
+    month: 'June 2026',
+    name: 'London Reggae & Food Festival',
+    venue: 'Freight Brixton, London SW9 8PB',
+    ticketUrl: 'https://www.skiddle.com/whats-on/London/Freight-Brixton/London-Reggae--Food-Festival---Rooftop-Edition/42267827/',
+  },
 ];
 
 function EventsPreview() {
+  const ref = useFadeIn();
   return (
-    <section className='events-preview'>
+    <section ref={ref} className='events-preview fade-in-section'>
       <p className='section-label'>Upcoming</p>
       <h2 className='section-heading'>Next Events</h2>
       <FlagStripe />
@@ -66,7 +104,9 @@ function EventsPreview() {
             <div className='event-card__month'>{ev.month}</div>
             <div className='event-card__name'>{ev.name}</div>
             <div className='event-card__venue'>{ev.venue}</div>
-            <a href={ev.ticketUrl} className='event-card__ticket'>Get Tickets</a>
+            <a href={ev.ticketUrl} className='event-card__ticket' target='_blank' rel='noopener noreferrer'>
+              Get Tickets
+            </a>
           </div>
         ))}
       </div>
@@ -81,8 +121,9 @@ const SC_LATEST_EMBED =
   'https://w.soundcloud.com/player/?url=https%3A%2F%2Fapi.soundcloud.com%2Fusers%2F264359230&color=%23FFD700&auto_play=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false';
 
 function MixFeature() {
+  const ref = useFadeIn();
   return (
-    <section className='mix-section'>
+    <section ref={ref} className='mix-section fade-in-section'>
       <p className='section-label'>Latest Mix</p>
       <h2 className='section-heading'>Listen Up</h2>
       <FlagStripe />
@@ -111,17 +152,28 @@ function MixFeature() {
   );
 }
 
-const PRESS_CREDITS = ['Wireless', 'Lovers Rock', 'The Yaad Stage', 'Proud City', 'London Reggae & Food Festival'];
+const PRESS_CREDITS = [
+  { name: 'City Splash', badge: '30,000+ fans' },
+  { name: 'Wireless Festival' },
+  { name: 'SXSW London' },
+  { name: 'The Yaad Stage' },
+  { name: 'Proud City' },
+  { name: 'London Reggae & Food Festival' },
+];
 
 function Press() {
+  const ref = useFadeIn();
   return (
-    <section className='press-section'>
+    <section ref={ref} className='press-section fade-in-section'>
       <p className='section-label'>As Seen At</p>
       <h2 className='section-heading'>The Stages</h2>
       <FlagStripe width={80} />
       <div className='press-grid'>
-        {PRESS_CREDITS.map((name) => (
-          <div key={name} className='press-item'>{name}</div>
+        {PRESS_CREDITS.map((c) => (
+          <div key={c.name} className='press-item'>
+            <span className='press-item__name'>{c.name}</span>
+            {c.badge && <span className='press-item__badge'>{c.badge}</span>}
+          </div>
         ))}
       </div>
     </section>
@@ -129,8 +181,9 @@ function Press() {
 }
 
 function BookingStrip() {
+  const ref = useFadeIn();
   return (
-    <div className='booking-strip'>
+    <div ref={ref} className='booking-strip fade-in-section'>
       <div>
         <h2 className='booking-strip__heading'>Ready to Book?</h2>
         <p className='booking-strip__sub'>Festivals · Club Nights · Private Events · Sound Clashes</p>
@@ -144,6 +197,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <StatsBar />
       <AboutStrip />
       <EventsPreview />
       <MixFeature />

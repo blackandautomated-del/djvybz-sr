@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 14px 40px;
-  background: rgba(8, 14, 8, 0.88);
+  background: rgba(8, 14, 8, 0.92);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 215, 0, 0.1);
 }
@@ -39,6 +39,12 @@
   color: var(--gold);
 }
 
+.nav__right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .nav__cta {
   background: var(--gold);
   color: var(--bg);
@@ -54,8 +60,94 @@
   opacity: 0.88;
 }
 
+/* ── HAMBURGER ── */
+.nav__hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px 2px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.nav__hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--gold);
+  transition: transform 0.22s ease, opacity 0.22s ease;
+  transform-origin: center;
+}
+
+.nav__hamburger--open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav__hamburger--open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.nav__hamburger--open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── MOBILE OVERLAY ── */
+.nav__overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(3px);
+  padding-top: 56px;
+}
+
+.nav__drawer {
+  background: rgba(8, 14, 8, 0.98);
+  border-bottom: 2px solid rgba(255, 215, 0, 0.2);
+  padding: 8px 40px 36px;
+}
+
+.nav__drawer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav__drawer-link {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 36px;
+  letter-spacing: 4px;
+  color: var(--text);
+  text-transform: uppercase;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.08);
+  transition: color 0.2s;
+}
+
+.nav__drawer-link:hover {
+  color: var(--gold);
+}
+
+.nav__drawer-link--cta {
+  color: var(--gold);
+  border-bottom: none;
+  margin-top: 8px;
+}
+
+/* ── DESKTOP ── */
 @media (min-width: 900px) {
   .nav__links {
     display: flex;
+  }
+
+  .nav__hamburger {
+    display: none;
+  }
+
+  .nav__overlay {
+    display: none;
   }
 }

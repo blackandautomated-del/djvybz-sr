@@ -105,6 +105,47 @@
   flex-wrap: wrap;
 }
 
+/* ── STATS BAR ── */
+.stats-bar {
+  background: #000;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 13px 0;
+  border-top: 1px solid rgba(255, 215, 0, 0.15);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.15);
+}
+
+.stats-bar__track {
+  display: inline-flex;
+  animation: ticker 32s linear infinite;
+}
+
+.stats-bar__track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.stats-bar__item {
+  font-family: var(--font-display);
+  font-size: 13px;
+  letter-spacing: 4px;
+  color: var(--gold);
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.stats-bar__sep {
+  color: var(--green);
+  font-size: 16px;
+}
+
 /* ── ABOUT STRIP ── */
 .about-strip {
   background: var(--raised);
@@ -117,15 +158,20 @@
 
 .about-strip__img {
   aspect-ratio: 3 / 4;
-  background: linear-gradient(135deg, #1a2a1a, #0d1a0d);
+  background: linear-gradient(160deg, #1a2a1a 0%, #0d1a0d 100%);
   border: 1px solid rgba(0, 122, 61, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--muted);
-  font-size: 11px;
-  letter-spacing: 2px;
   max-height: 320px;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-strip__img-flag {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--green), var(--gold), var(--red));
 }
 
 .about-strip__text p {
@@ -286,20 +332,41 @@
   display: flex;
   gap: 16px;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   flex-wrap: wrap;
   margin-top: 32px;
-  opacity: 0.5;
 }
 
 .press-item {
   font-family: var(--font-display);
-  font-size: 16px;
+  font-size: 15px;
   letter-spacing: 3px;
   color: var(--text);
   text-transform: uppercase;
-  border: 1px solid rgba(245, 240, 232, 0.2);
-  padding: 10px 20px;
+  border: 1px solid rgba(245, 240, 232, 0.25);
+  padding: 12px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  transition: border-color 0.2s;
+}
+
+.press-item:hover {
+  border-color: var(--gold);
+}
+
+.press-item__name {
+  /* inherits from .press-item */
+}
+
+.press-item__badge {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--green);
+  text-transform: uppercase;
 }
 
 /* ── BOOKING CTA STRIP ── */
@@ -355,7 +422,6 @@
 .music-page {
   padding-top: 80px;
   min-height: 100vh;
-  background: var(--bg-dark, #0d1a0d);
 }
 
 .music-hero {
@@ -364,11 +430,35 @@
 }
 
 .music-hero__sub {
-  max-width: 540px;
+  max-width: 560px;
   margin: 16px auto 0;
-  color: rgba(249, 246, 240, 0.7);
-  font-size: 18px;
-  line-height: 1.6;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.music-genres {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 28px;
+}
+
+.music-genre-pill {
+  font-family: var(--font-display);
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: var(--gold);
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  padding: 8px 18px;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.music-genre-pill:hover {
+  border-color: var(--gold);
+  color: var(--gold);
 }
 
 .music-player-section {
@@ -386,4 +476,16 @@
 .music-sc-link {
   margin-top: 24px;
   text-align: center;
+}
+
+/* ── SCROLL FADE-IN ── */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

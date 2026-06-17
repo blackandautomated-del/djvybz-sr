@@ -20,7 +20,8 @@ const PAST = [
     month: 'May',
     year: '2026',
     name: 'City Splash',
-    venue: 'London',
+    venue: 'Clapham Common, London',
+    crowd: '30,000+ fans',
   },
   {
     day: '19',
@@ -28,6 +29,7 @@ const PAST = [
     year: '2025',
     name: 'Lovers Rock',
     venue: 'London',
+    crowd: '',
   },
 ];
 
@@ -84,6 +86,7 @@ export default function Events() {
                 <div className='events-list__info'>
                   <div className='events-list__name'>{ev.name}</div>
                   <div className='events-list__venue'>{ev.venue}</div>
+                  {ev.crowd && <div className='events-list__crowd'>{ev.crowd}</div>}
                 </div>
                 <span className='events-list__past-badge'>Past</span>
               </div>
