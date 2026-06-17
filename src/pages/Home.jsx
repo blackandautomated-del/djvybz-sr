@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import FlagStripe from '../components/FlagStripe';
-import djVybzLogo from '../assets/djvybzsr-logo.png';
 import './Home.css';
 
 function Hero() {
@@ -14,7 +13,11 @@ function Hero() {
       </div>
       <div className='hero__inner'>
         <p className='hero__sound'>Sharprazer Sound</p>
-        <img src={djVybzLogo} alt='DJ Vybz SR' className='hero__logo' />
+        <div className='hero__name'>
+          <span className='hero__name-dj'>DJ</span>
+          <span className='hero__name-vybz'>VYBZ-SR</span>
+          <span className='hero__name-mic' aria-hidden='true'>🎤</span>
+        </div>
         <span className='hero__badge'>🇯🇲 &nbsp;JAMAICA</span>
         <p className='hero__sub'>London · Reggae · Dancehall · MC</p>
         <FlagStripe width={100} />
