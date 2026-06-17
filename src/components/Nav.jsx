@@ -18,7 +18,7 @@ export default function Nav() {
   return (
     <>
       <nav className='nav'>
-        <Link to='/' className='nav__logo'>DJ VYBZ SR</Link>
+        <a href='https://www.instagram.com/djvybz_sr' target='_blank' rel='noreferrer' className='nav__logo'>DJ VYBZ SR</a>
         <ul className='nav__links'>
           <li><Link to='/'>Home</Link></li>
           <li><Link to='/about'>About</Link></li>

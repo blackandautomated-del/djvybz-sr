@@ -1,16 +1,17 @@
 import { Link } from 'react-router-dom';
 import FlagStripe from '../components/FlagStripe';
 import useFadeIn from '../hooks/useFadeIn';
+import pressPhoto from '../assets/vybz-sr-press.jpg';
 import './About.css';
 
 const CREDITS = [
-  { name: 'City Splash', venue: 'Clapham Common, London', note: '30,000+ fans', year: '2026' },
-  { name: 'Wireless Festival', venue: 'Crystal Palace Park, London', note: "UK's flagship urban festival", year: '2024' },
-  { name: 'SXSW London', venue: 'Various, London', note: 'International showcase', year: '2024' },
-  { name: 'The Yaad Stage', venue: 'London', note: '', year: '' },
+  { name: 'City Splash', venue: 'Brockwell Park, London', note: '30,000+ fans', year: '2025' },
+  { name: 'Wireless Festival', venue: 'Drip VIP Village, London', note: '', year: '' },
+  { name: 'SXSW London', venue: "Becca D's Deadly Stage", note: '', year: '2025' },
+  { name: 'The Yaad Stage', venue: 'Popcaan · Tarrus Riley · Spice', note: '', year: '' },
   { name: 'Proud City', venue: 'London', note: '', year: '' },
   { name: 'London Reggae & Food Festival', venue: 'Freight Brixton', note: '', year: '2026' },
-  { name: 'Lovers Rock', venue: 'London', note: '', year: '2025' },
+  { name: 'Lovers Rock UK', venue: 'Resident DJ', note: '', year: '' },
 ];
 
 const ROLES = ['DJ', 'MC', 'Sound System Selector'];
@@ -31,24 +32,26 @@ export default function About() {
 
       <section ref={bioRef} className='about-bio fade-in-section'>
         <div className='about-bio__photo'>
+          <img src={pressPhoto} alt='DJ Vybz SR performing at City Splash, Brockwell Park' className='about-bio__photo-img' />
+          <p className='about-bio__caption'>City Splash · Brockwell Park · 2025</p>
           <div className='about-bio__photo-flag' />
         </div>
         <div className='about-bio__text'>
           <p>
-            DJ Vybz SR is a London-based DJ, MC, and founding member of Sharprazer Sound — the
-            sound system collective built on authentic Jamaican dancehall and reggae. With Jamaican
-            roots and a career forged in the UK, he has earned his place on stages that demand
-            more than good taste.
+            DJ Vybz SR is a London-based DJ, MC, and CEO of Sharprazer Sound. Of Jamaican heritage,
+            he brings the authentic weight of dancehall, lovers rock, reggae, roots, and bashment to
+            every room he works — whether that's a 30,000-strong festival crowd or an intimate
+            sound system night.
           </p>
           <p>
-            As MC and selector for Sharprazer, Vybz SR doesn't just play records. He commands
-            the room — reading crowds at festivals of 30,000 people with the same precision he
-            brings to intimate reggae nights.
+            His credits span City Splash at Brockwell Park, Wireless Festival's Drip VIP Village,
+            SXSW London 2025 on Becca D's Deadly stage, The Yaad Stage alongside Popcaan, Tarrus
+            Riley, and Spice, and the London Reggae &amp; Food Festival at Freight Brixton. He holds
+            a residency at Lovers Rock UK and serves as official host for Becca Dudley and Shayna T Marie.
           </p>
           <p>
-            From Wireless to SXSW London to City Splash, his reputation is built on energy,
-            authenticity, and an uncompromising knowledge of the music. Whether it's deep roots,
-            bashment, or lovers rock — he knows what the people need.
+            Vybz SR is available for festival bookings, club nights, brand activations, and hosted
+            events. Enquiries via the bookings page.
           </p>
           <Link to='/bookings' className='link-arrow' style={{ marginTop: '8px', display: 'inline-block' }}>
             Book DJ Vybz SR →
