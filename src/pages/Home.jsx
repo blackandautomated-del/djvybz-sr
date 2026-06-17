@@ -49,9 +49,7 @@ function AboutStrip() {
 }
 
 const UPCOMING_EVENTS = [
-  { day: '28', month: 'June 2026', name: 'London Reggae & Food Festival', venue: 'Freight Brixton, London SW9 8PB', ticketUrl: '#' },
-  { day: 'TBC', month: '2026', name: 'Lovers Rock London', venue: 'London', ticketUrl: '#' },
-  { day: 'TBC', month: '2026', name: 'Proud City', venue: 'London', ticketUrl: '#' },
+  { day: '28', month: 'June 2026', name: 'London Reggae & Food Festival', venue: 'Freight Brixton, London SW9 8PB', ticketUrl: 'https://www.skiddle.com/whats-on/London/Freight-Brixton/London-Reggae--Food-Festival---Rooftop-Edition/42267827/' },
 ];
 
 function EventsPreview() {
