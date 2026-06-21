@@ -38,7 +38,7 @@ export default function About() {
         </div>
         <div className='about-bio__text'>
           <p>
-            DJ Vybz SR is a London-based DJ, MC, and CEO of Sharprazer Sound. Of Jamaican heritage,
+            <a href='https://www.instagram.com/djvybz_sr' target='_blank' rel='noreferrer' className='artist-link'>DJ Vybz SR</a> is a London-based DJ, MC, and CEO of Sharprazer Sound. Of Jamaican heritage,
             he brings the authentic weight of dancehall, lovers rock, reggae, roots, and bashment to
             every room he works — whether that's a 30,000-strong festival crowd or an intimate
             sound system night.
